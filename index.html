@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Registration Form in HTML CSS</title>
+		<!-- <script src="src/form.js" defer></script> -->
+		<!-- <script src="src/form2.js" defer></script> -->
+		<script type="module" src="src/validation.js" defer></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link href="/dist/output.css" rel="stylesheet" />
+	</head>
+	<body class="grainy">
+		<main class="mx-auto max-w-full py-7 px-5 md:px-20 lg:px-0 lg:w-1/2">
+			<h1 class="font-bold text-3xl text-center">Registration Form</h1>
+			<form class="form" name="submit-to-google-sheet flex flex-col gap-3">
+				<div class="p-1">
+					<label for="fullName" class="flex items-center justify-between w-full"
+						>Full name
+						<p class="display-error"></p>
+					</label>
+					<input
+						type="text"
+						id="fullName"
+						placeholder="e.g. السيد ابو دهب"
+						name="fullName"
+					/>
+				</div>
+
+				<div class="p-1">
+					<label for="email" class="flex items-center justify-between w-full"
+						>Email Address
+						<p class="display-error"></p
+					></label>
+					<input
+						id="email"
+						type="email"
+						placeholder="e.g. test@email.com"
+						name="email"
+					/>
+				</div>
+
+				<div class="p-1">
+					<label
+						for="phoneNumber"
+						class="flex items-center justify-between w-full"
+						>Phone Number
+						<p class="display-error"></p
+					></label>
+					<input
+						id="phoneNumber"
+						type="text"
+						placeholder="e.g. 0100123456"
+						maxlength="11"
+						name="phoneNumber"
+					/>
+				</div>
+
+				<div class="p-1 flex items-center gap-2">
+					<input
+						type="checkbox"
+						class="h-5 aspect-square accent-indigo-600"
+						name="whatsapp"
+						id="whatsapp"
+					/>
+					<label for="whatsapp">Is connected to WhatsApp?</label>
+				</div>
+
+				<div class="p-1">
+					<label for="committe" class="flex items-center justify-between w-full"
+						>Faculty/institute
+						<p class="display-error"></p
+					></label>
+					<select id="faculty" name="faculty">
+						<option hidden value="">Your faculty/institute</option>
+						<option
+							value="Faculty of Computers & Information - Luxor University"
+						>
+							Faculty of Computers & Information - Luxor University
+						</option>
+						<option value="High Institute of Engineering And Technology - Tod">
+							High Institute of Engineering And Technology - Tod
+						</option>
+					</select>
+				</div>
+
+				<div class="p-1">
+					<label for="level" class="flex items-center justify-between w-full"
+						>Level
+						<p class="display-error"></p
+					></label>
+					<select id="level" name="level">
+						<option hidden value="">Your level</option>
+						<option value="Level 1">Level 1</option>
+						<option value="Level 2">Level 2</option>
+						<option value="Level 3">Level 3</option>
+						<option value="Level 4">Level 4</option>
+					</select>
+				</div>
+
+				<div class="p-1">
+					<label for="committe" class="flex items-center justify-between w-full"
+						>Committe
+						<p class="display-error"></p
+					></label>
+					<select id="committee" class="accent-indigo-600" name="committe">
+						<option hidden value="">
+							What committee would you like to apply for?
+						</option>
+						<option value="HR (Human Resources)">HR (Human Resources)</option>
+						<option value="PR (Public Relations)">PR (Public Relations)</option>
+						<option value="FR (Fundraising)">FR (Fundraising)</option>
+						<option value="Multimedia">Multimedia</option>
+						<option value="Social Media">Social Media</option>
+					</select>
+				</div>
+
+				<div class="grid gap-2">
+					<label
+						for="committeTextarea"
+						class="flex items-center justify-between w-full"
+						>What do you know about your Committee?
+						<p class="display-error"></p
+					></label>
+					<textarea
+						id="committeTextarea"
+						name="committeTextarea"
+						placeholder="e.g. Absolutely nothing."
+						class="resize-none min-h-[10rem] p-2"
+					></textarea>
+				</div>
+
+				<div class="p-2">
+					<label class="flex-1" for="rangeInput"
+						>How do you rate you skills out of 10?</label
+					>
+					<span class="flex gap-2">
+						<input
+							type="range"
+							min="0"
+							max="10"
+							step="1"
+							value="5"
+							id="rangeInput"
+							class="accent-indigo-600"
+						/>
+						<p class="font-semibold text-indigo-600" id="rangeValue">5</p>
+					</span>
+				</div>
+
+				<div class="p-1">
+					<label for="link"
+						>Place a link to your previous work (optional)</label
+					>
+					<input
+						id="link"
+						type="text"
+						placeholder="e.g. https://www.link.com"
+						name="link"
+					/>
+				</div>
+
+				<button
+					type="submit"
+					class="py-2 my-4 mx-auto block min-w-[12rem] px-3 font-semibold bg-indigo-600 hover:bg-indigo-600/90 transition-colors rounded-md text-white"
+				>
+					Submit
+				</button>
+			</form>
+		</main>
+
+		<script>
+			const rangeInput = document.getElementById('rangeInput');
+			const rangeValue = document.getElementById('rangeValue');
+
+			rangeInput.addEventListener('input', function () {
+				rangeValue.textContent = this.value;
+			});
+		</script>
+	</body>
+</html>
